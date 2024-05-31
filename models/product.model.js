@@ -42,9 +42,7 @@ const ProductSchema = mongoose.Schema(
       required: true,
     },
     images: [imageSubSchema],
-    sizes: {
-      
-    }
+    sizes: {},
   },
   { timestamps: true }
 );

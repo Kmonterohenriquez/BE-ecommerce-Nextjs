@@ -79,12 +79,34 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+// CATEGORIES
+const getFavoriteProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ category: "favorites" });
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getTrendingProducts = async (req, res) => {
+  try {
+    const products = await Product.find({ category: "trending" });
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   getProducts,
   getProduct,
-  getMenProducts,
-  getWomenProducts,
   createProduct,
   updateProduct,
   deleteProduct,
+  // categories
+  getWomenProducts,
+  getMenProducts,
+  getFavoriteProducts,
+  getTrendingProducts,
 };
