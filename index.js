@@ -26,6 +26,6 @@ mongoose
       console.log("Server is running on port 8080");
     });
   })
-  .catch(() => {
-    console.log("Connection failed!");
+  .catch((error) => {
+    console.log("Connection failed!: ", error);
   });
